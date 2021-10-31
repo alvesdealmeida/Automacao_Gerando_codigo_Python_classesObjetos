@@ -1,0 +1,610 @@
+import pyautogui
+import time
+import pyperclip
+pyautogui.PAUSE = 1
+
+# Algoritmo de automação criacao arquivo executável em python
+
+# Acessar o cmd da maquina
+pyautogui.press("winleft")
+pyautogui.write("cmd")
+pyautogui.press("enter")
+
+# acessar o diretorio Desktop
+pyautogui.write("cd Desktop")
+pyautogui.press("enter")
+
+#criando o diretorio Automacao
+pyautogui.write("mkdir Automacao")
+pyautogui.press("enter")
+
+# acessando o diretorio Automacao
+pyautogui.write("cd Automacao")
+pyautogui.press("enter")
+
+#sair do cmd
+pyautogui.write("exit")
+pyautogui.press("enter")
+
+#abrindo o bloco de notas
+pyautogui.press("winleft")
+pyautogui.write("bloco de notas")
+pyautogui.press("enter")
+
+# inico do codigo em payton sobre classes fracao
+
+pyautogui.write("# inicio do codigo em python sobre classes fracao")
+pyautogui.press("enter")
+
+#funcao MDC
+pyautogui.write("def mdc(x,y):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.write("while y != 0:")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("resto = x % y")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("x = y")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("y = resto")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("return x")
+pyautogui.press("enter")
+
+#Classe Fracao
+pyautogui.write("class Fracao:")
+pyautogui.press("enter")
+
+#funcao init
+pyautogui.press("tab")
+pyautogui.write("def __init__(self, num=1, den=1):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if (den == 0):raise ValueError('zero denominator')")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("self.num = num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("self.den = den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if self.den < 0:")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("self.num = -self.num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("self.den = -self.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("self.simplifica() ")
+pyautogui.press("enter")
+
+#funcao simplifica
+pyautogui.press("tab")
+pyautogui.write("def simplifica(self):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("max = 1")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if self.num != 0:")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("max = mdc(self.num, self.den)")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if max > 1: ")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("self.num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("self.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return self")
+pyautogui.press("enter")
+
+#funcao eq
+pyautogui.press("tab")
+pyautogui.write("def __eq__(self, f):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("a = self.simplifica()")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("b = self.simplifica()")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return (a.num == b.num and a.den == b.den)")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return (a.num == b.num and a.den == b.den) == true")
+pyautogui.press("enter")
+
+#funcao add
+pyautogui.press("tab")
+pyautogui.write("def __add__(self, f):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if isinstance (f, int):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num + f * self.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("elif isinstance (f, Fracao):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den * f.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num * f.den - self.den * f.num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("else: raise TypeError ('__add__')")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return Fracao(num, den)")
+pyautogui.press("enter")
+#funcao Sub
+pyautogui.press("tab")
+pyautogui.write("def __sub__(self, f):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if isinstance (f, int):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num - f * self.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("elif isinstance (f, Fracao):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den * f.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num * f.den - self.den * f.num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("else: raise TypeError ('__sub__')")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return Fracao(num, den)")
+pyautogui.press("enter")
+
+#funcao mult
+pyautogui.press("tab")
+pyautogui.write("def __mul__(self, f):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if isinstance (f,int):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num * f")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("elif isinstance (f, Fracao):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num * f.num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den * f.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("else: raise TypeError ('__mul__')")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return Fracao(num, den)")
+pyautogui.press("enter")
+
+#funcao div
+pyautogui.press("tab")
+pyautogui.write("def __truediv__(self, f):  ")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if isinstance (f,int):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den * f")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("elif isinstance (f, Fracao):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("num = self.num * f.den")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("den = self.den * f.num")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("else: raise TypeError ('__truediv__')")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return Fracao (num,den)")
+pyautogui.press("enter")
+
+#funcao str
+pyautogui.press("tab")
+pyautogui.write("def __str__(self):")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("if self.num == 0:")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return '0' ")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("elif self.den == 1:")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return str(self.num)")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("else:")
+pyautogui.press("enter")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.press("tab")
+pyautogui.write("return str(self.num)+ '/' +str(self.den)" )
+
+#menu do bloco de notas: arquivo
+time.sleep(5)
+pyautogui.click(x=746, y=184)
+
+# menu do bloco de nota : arquivo : salvar como
+time.sleep(5)
+pyautogui.click(x=766, y=273)
+
+#escolher diretorio (area de trabalho)
+time.sleep(5)
+pyautogui.click(x=785, y=364)
+
+# escolher diretorio (Automacao)
+time.sleep(5)
+pyautogui.click(x=1420, y=384)
+pyautogui.press("enter")
+
+# mudar de documentos texto  para todos
+time.sleep(5)
+pyautogui.click(x=874, y=600)
+
+# escolha de todos os arquivos
+time.sleep(5)
+pyautogui.click(x=883, y=633)
+
+# sinalizacao do espaço para digitar o nome do arquivo
+time.sleep(5)
+pyautogui.click(x=847, y=573)
+
+# digitando o nome do arquivo
+pyautogui.write("automacao_fracao.py")
+pyautogui.press("enter")
+
+#salvando o arquivo
+time.sleep(5)
+pyautogui.click(x=1343, y=642)
+
+#fechar janela do arquivo
+time.sleep(5)
+pyautogui.click(x=1511, y=159)
+
+#criando arquivo main
+#abrindo o bloco de notas
+pyautogui.press("winleft")
+pyautogui.write("bloco de notas")
+pyautogui.press("enter")
+
+# inico do codigo em payton Main
+pyautogui.write("# inicio do codigo em python arquivo main")
+pyautogui.press("enter")
+
+pyautogui.write("from automacao_fracao import Fracao")
+pyautogui.press("enter")
+pyautogui.write("import sys")
+pyautogui.press("enter")
+
+pyautogui.write("f = Fracao(15,45)")
+pyautogui.press("enter")
+pyautogui.write("g = Fracao(50,75)")
+pyautogui.press("enter")
+
+pyautogui.write("print('f = 15/45 = %s' % f)")
+pyautogui.press("enter")
+
+pyautogui.write("print('g = 50/75 = %s' % g)")
+pyautogui.press("enter")
+
+pyautogui.write("print('f + g = %s' % (f + g))")
+pyautogui.press("enter")
+
+pyautogui.write("h = Fracao(10,28)")
+pyautogui.press("enter")
+
+pyautogui.write("print('h = 10/28 = %s' % h)")
+pyautogui.press("enter")
+
+pyautogui.write("print('f * h = %s'  % (f*h))")
+pyautogui.press("enter")
+
+pyautogui.write("print('f + g + h = %s' % (f + g + h))")
+pyautogui.press("enter")
+
+pyautogui.write("print('f + g * h = %s' % (f + g * h))")
+pyautogui.press("enter")
+
+pyautogui.write("print('g - f - f = %s' % (g - f - f))")
+pyautogui.press("enter")
+
+pyautogui.write("print('f * 2 = %s' % (f * 2))")
+pyautogui.press("enter")
+
+pyautogui.write("print('f + 2 = %s' % (f + 2))")
+pyautogui.press("enter")
+
+pyautogui.write("print('f / g = %s' % (f / g))")
+pyautogui.press("enter")
+
+pyautogui.write("f += g * 2")
+pyautogui.press("enter")
+
+pyautogui.write("print('f += g * 2 = %s' %  f)")
+pyautogui.press("enter")
+
+pyautogui.write("f -= g * 2")
+pyautogui.press("enter")
+
+pyautogui.write("print('f -= g * 2 = %s' % f)")
+pyautogui.press("enter")
+
+pyautogui.write("try:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('2 + f =')")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print(2 + f)")
+pyautogui.press("enter")
+
+pyautogui.write("except (ValueError, TypeError) as e:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('Exception caught: %s' %e)")
+pyautogui.press("enter")
+
+pyautogui.write("print('f == h %s ' % (f==h))")
+pyautogui.press("enter")
+
+pyautogui.write("print('f=g=h')")
+pyautogui.press("enter")
+
+pyautogui.write("f=g=h")
+pyautogui.press("enter")
+
+pyautogui.write("print('f == h %s' % (f==h))")
+pyautogui.press("enter")
+
+pyautogui.write("try:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('f += \ ''a\'' ') ")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write('f += "a" ')
+pyautogui.press("enter")
+
+pyautogui.write("except(ValueError, TypeError) as e:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('Exception caught: %s' % e)")
+pyautogui.press("enter")
+
+
+pyautogui.write("try:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('Fracao(2,0) = ')")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print(Fracao(2,0))")
+
+pyautogui.press("enter")
+
+pyautogui.write("except(ValueError, TypeError) as e:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('Exception caught: %s' % e)")
+pyautogui.press("enter")
+
+pyautogui.write("try:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('Fracao(5,3) / Fracao(0,4)')")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print(Fracao(5,3) / Fracao(0,4))")
+pyautogui.press("enter")
+
+pyautogui.write("except Exception as e:")
+pyautogui.press("enter")
+
+pyautogui.press("tab")
+pyautogui.write("print('Exception caught: %s' % e)")
+pyautogui.press("enter")
+
+#menu do bloco de notas: arquivo
+time.sleep(5)
+pyautogui.click(x=746, y=184)
+
+# menu do bloco de nota : arquivo : salvar como
+time.sleep(5)
+pyautogui.click(x=766, y=273)
+
+#escolher diretorio (area de trabalho)
+time.sleep(5)
+pyautogui.click(x=785, y=364)
+
+# escolher diretorio (Automacao)
+time.sleep(5)
+pyautogui.click(x=1420, y=384)
+pyautogui.press("enter")
+
+# mudar de documentos texto  para todos
+time.sleep(5)
+pyautogui.click(x=874, y=600)
+
+# escolha de todos os arquivos
+time.sleep(5)
+pyautogui.click(x=883, y=633)
+
+# sinalizacao do espaço para digitar o nome do arquivo
+time.sleep(5)
+pyautogui.click(x=847, y=573)
+
+
+# digitando o nome do arquivo
+pyautogui.write("main.py")
+pyautogui.press("enter")
+
+#salvando o arquivo
+time.sleep(5)
+pyautogui.click(x=1343, y=642)
+
+#fechar janela do arquivo
+time.sleep(5)
+pyautogui.click(x=1511, y=159)
+
+
+# Acessar o cmd da maquina
+pyautogui.press("winleft")
+pyautogui.write("cmd")
+pyautogui.press("enter")
+
+# acessar o diretorio Desktop
+pyautogui.write("cd Desktop")
+pyautogui.press("enter")
+
+# acessando o diretorio Automacao
+pyautogui.write("cd Automacao")
+pyautogui.press("enter")
+
+pyautogui.write("python main.py")
+pyautogui.press("enter")
+#fim do codigo
+
+#Algoritmo de Apoio
+#localizar a posição do cursor na tela:
+time.sleep(10)
+pyautogui.position()
